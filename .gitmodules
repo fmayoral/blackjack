@@ -1,0 +1,8 @@
+[submodule "blackjack-frontend"]
+	path = blackjack-frontend
+	url = https://github.com/fmayoral/react-blackjack.git
+	branch = main
+[submodule "blackjack-service"]
+	path = blackjack-service
+	url = https://github.com/fmayoral/java-blackjack.git
+	branch = main
