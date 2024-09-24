@@ -41,6 +41,7 @@ docker-compose up --build
 This command does the following:
 - Builds the Docker images for the frontend and backend services if they don't exist.
 - Starts the MongoDB, backend, and frontend services in containers.
+- Starts a HyperDx local server for application monitoring.
 - Maps the necessary ports to your host, making the services accessible via your web browser.
 
 ## Accessing the Application
@@ -48,6 +49,7 @@ This command does the following:
 Once all services are up and running:
 - The frontend service will be available at [http://localhost:3000](http://localhost:3000).
 - The backend API can be accessed at [http://localhost:8080](http://localhost:8080).
+- The HyperDX Local server for monitoring can be accessed at [http://localhost:9000](http://localhost:9000).
 
 ## Stopping the Services
 

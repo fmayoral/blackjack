@@ -10,15 +10,29 @@ services:
     build: ./blackjack-service
     environment:
       SPRING_PROFILES_ACTIVE: prod
-      MONGO_URI: mongodb://mongodb:27017/apexon
+      MONGO_URI: mongodb://mongodb:27017/fmayoral
+      OTEL_EXPORTER_OTLP_ENDPOINT: http://hyperdx-local:4318
     ports:
       - "8080:8080"
     depends_on:
       - mongodb
-  
+      - hyperdx-local
+
   blackjack-frontend:
     build: ./blackjack-frontend
     ports:
       - "3000:3000"
     depends_on:
       - blackjack-service
+
+  hyperdx-local:
+    image: hyperdx/hyperdx-local
+    ports:
+      - "8000:8000"
+      - "4317:4317"
+      - "4318:4318"
+      - "9000:8080"
+      - "8002:8002"
+    environment:
+      HYPERDX_API_PORT: 8000
+      HYPERDX_APP_PORT: 9000
