@@ -24,6 +24,13 @@ cd blackjack
 git submodule update --init --recursive
 ```
 
+## Configuring environmental variables
+Included in the project there's a `.env.template` file.
+
+You need to copy this file and rename it to `.env`.
+
+Now in your new `.env` file you should replace the values for your own local environment values.
+
 ## Running the Services with Docker Compose
 
 Navigate to the root directory of the cloned repository:
@@ -49,6 +56,7 @@ This command does the following:
 Once all services are up and running:
 - The frontend service will be available at [http://localhost:3000](http://localhost:3000).
 - The backend API can be accessed at [http://localhost:8080](http://localhost:8080).
+- The Keycloak blackjack realm admin can be accessed at [http://localhost:9090](http://localhost:9090/admin/master/console/#/BlackjackRealm/realm-settings).
 - The HyperDX Local server for monitoring can be accessed at [http://localhost:9000](http://localhost:9000).
 
 ## Stopping the Services

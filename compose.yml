@@ -36,3 +36,14 @@ services:
     environment:
       HYPERDX_API_PORT: 8000
       HYPERDX_APP_PORT: 9000
+
+  keycloak:
+    image: quay.io/keycloak/keycloak:latest
+    environment:
+      KEYCLOAK_ADMIN: ${KEYCLOAK_ADMIN_USER}
+      KEYCLOAK_ADMIN_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD}
+    command: start-dev --import-realm
+    volumes:
+      - ./keycloak/realms/:/opt/keycloak/data/import/
+    ports:
+      - "9090:8080"
